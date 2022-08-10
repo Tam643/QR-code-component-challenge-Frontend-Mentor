@@ -118,6 +118,7 @@ main .container {
   width: 100%;
   height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -148,15 +149,42 @@ main .container .card .description-container h1.header {
 main .container .card .description-container .description {
   color: hsl(220deg, 15%, 55%);
 }
-main footer {
+main .container footer {
   width: 100%;
   display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  color: hsl(220deg, 15%, 55%);
   background-color: inherit;
   text-align: center;
+  margin-top: 20px;
   padding: 10px 15px;
+}
+main .container footer a {
+  color: hsl(218deg, 44%, 22%);
+  position: relative;
+  text-decoration: none;
+}
+main .container footer a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  border: 1px solid hsl(218deg, 44%, 22%);
+  border-left: none;
+  border-bottom: none;
+  transition: all 0.15s;
+}
+main .container footer a:hover {
+  color: #000;
+}
+main .container footer a:hover::after {
+  border-color: #000;
+  width: 100%;
+  left: 0;
+  opacity: 1;
+  transition: all 0.15s;
 }
 
 @media only screen and (max-width: 250px) {

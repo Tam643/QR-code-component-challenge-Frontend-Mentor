@@ -130,6 +130,7 @@ main {
         width: 100%;
         height: 100%;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
@@ -161,22 +162,51 @@ main {
                 }
 
                 .description {
-                    // margin: 0 px;
                     color: $GrayishBlue;
                 }
             }
         }
-    }
 
-    footer {
-        width: 100%;
-        display: block;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        background-color: inherit;
-        text-align: center;
-        padding: 10px 15px;
+        footer {
+            width: 100%;
+            display: block;
+            color: $GrayishBlue;
+            background-color: inherit;
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 15px;
+
+            a {
+                color: $DarkBlue;
+                position: relative;
+                text-decoration: none;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                    border: 1px solid $DarkBlue;
+                    border-left: none;
+                    border-bottom: none;
+                    transition: all 0.15s;
+                }
+
+                &:hover {
+                    color: #000;
+                    &::after {
+                        border-color: #000;
+                        width: 100%;
+                        left: 0;
+                        opacity: 1;
+                        transition: all 0.15s;
+                    }
+                }
+            }
+        }
     }
 }
 
